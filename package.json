@@ -1,0 +1,19 @@
+{
+  "name": "kvd",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node ./src/index.js"
+  },
+  "dependencies": {
+    "@lucemans/streams": "^1.2.4",
+    "@types/redis": "^2.8.28",
+    "axios": "^0.21.1",
+    "dotenv": "^8.2.0",
+    "microsoft-cognitiveservices-speech-sdk": "^1.14.1",
+    "minio": "^7.0.18",
+    "node-aplay": "^1.0.3",
+    "redis": "^3.0.2"
+  }
+}
