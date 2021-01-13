@@ -20,8 +20,7 @@ require('dotenv').config();
         if (f.data['setup'] && f.data['punchline']) {
             streamclient.queue(f.data.setup);
             streamclient.queue(f.data.punchline);
+            process.exit(0);
         }
     });
 })();
-
-// TODO: Add custom ALSA audio device for obs capture

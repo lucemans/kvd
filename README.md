@@ -38,3 +38,13 @@ S3_PORT=9000
 S3_USERNAME=notanadmin
 S3_PASSWORD=s3cur3p4ssw0rd
 ```
+
+## Whats `queue.js` ?
+
+If you were to happen to run through this repository and find this file, well then you are in **luc**k. After you have spun up your server, give this command a try
+
+```
+node ./src/queue.js
+```
+
+If everything goes according to plan you should be listening to a lovely random joke. (Credits for the [Joke API](https://github.com/15Dkatz/official_joke_api))
