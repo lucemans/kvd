@@ -19,14 +19,14 @@ var minioClient = new minio.Client({
 async function generate_audio(speech, filename) {
     return new Promise((resolve, reject) => {
         const speechConfig = f.SpeechConfig.fromSubscription(process.env.TOKEN, 'westeurope');
-        speechConfig.speechSynthesisVoiceName = 'en-GB-RyanNeural';
+        speechConfig.speechSynthesisVoiceName = process.env.VOICE;
         const audioConfig = f.AudioConfig.fromAudioFileOutput(path.join(__dirname, "../audio/" + filename));
         const synthesizer = new f.SpeechSynthesizer(speechConfig, audioConfig);
         synthesizer.speakTextAsync(
             speech,
             async result => {
                 if (result) {
-                    console.log(JSON.stringify(result));
+                    // console.log(JSON.stringify(result));
                 }
                 synthesizer.close();
                 resolve();
@@ -104,8 +104,8 @@ async function talk(speech) {
             log.delete.stop();
 
         } finally {
-            console.log(log.toString());
-            console.log(JSON.stringify(log));
+            console.log('LOG | ' + log.toString());
+            // This is the place you could store the `log` in some time-series database for further analysis.
             resolve();
         }
     });

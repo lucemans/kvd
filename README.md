@@ -37,6 +37,7 @@ S3_URL=localhost
 S3_PORT=9000
 S3_USERNAME=notanadmin
 S3_PASSWORD=s3cur3p4ssw0rd
+VOICE=en-GB-RyanNeural
 ```
 
 ## Whats `queue.js` ?
