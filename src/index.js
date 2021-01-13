@@ -4,16 +4,16 @@ const path = require('path');
 const fs = require('fs');
 const redis = require('redis');
 const streams = require('@lucemans/streams');
-require('dotenv').config();
 const minio = require('minio');
 const { LogState } = require('./log');
+require('dotenv').config();
 
 var minioClient = new minio.Client({
     endPoint: process.env.S3_URL,
     port: +process.env.S3_PORT,
     useSSL: false,
-    accessKey: 'minio',
-    secretKey: 'minio123'
+    accessKey: process.env.S3_USERNAME,
+    secretKey: process.env.S3_PASSWORD
 });
 
 async function generate_audio(speech, filename) {
